@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/UI/button";
 import { Input } from "@/components/UI/input";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/UI/card";
 import { Badge } from "@/components/UI/badge";
 import { CheckIcon, ArrowRightIcon, MailIcon } from "lucide-react";
 // Import the bunny image
