@@ -210,7 +210,7 @@ export default function LandingPage() {
               <img 
                 src={bunnyImage} 
                 alt="Bunny" 
-                className="absolute -top-14 right-31.5 w-18 h-18 object-contain transform z-100 hidden md:block" 
+                className="absolute -top-13 right-31.5 w-18 h-18 object-contain transform z-100 hidden md:block" 
               />
             </span>
             <span className="ml-2">coming soon</span>
