@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/components/UI/button";
+import { Input } from "@/components/UI/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/UI/badge";
 import { CheckIcon, ArrowRightIcon, MailIcon } from "lucide-react";
 // Import the bunny image
 import bunnyImage from "@/assets/bunny.png";
