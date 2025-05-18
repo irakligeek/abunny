@@ -23,12 +23,12 @@ jobs:
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}  # Role ARN from the secret.
         aws-region: ${{ secrets.AWS_REGION }}  # AWS region from the secret.
         
-    - name: Create production env file
-      run: |
-        echo "VITE_APP_AUTH_AUTHORITY=${{ secrets.COGNITO_AUTH_AUTHORITY }}" > .env.production
-        echo "VITE_APP_CLIENT_ID=${{ secrets.COGNITO_CLIENT_ID }}" >> .env.production
-        echo "VITE_APP_REDIRECT_URI=${{ secrets.COGNITO_REDIRECT_URI }}" >> .env.production
-        echo "VITE_APP_COGNITO_DOMAIN=${{ secrets.COGNITO_DOMAIN }}" >> .env.production
+    # - name: Create production env file
+    #   run: |
+    #     echo "VITE_APP_AUTH_AUTHORITY=${{ secrets.COGNITO_AUTH_AUTHORITY }}" > .env.production
+    #     echo "VITE_APP_CLIENT_ID=${{ secrets.COGNITO_CLIENT_ID }}" >> .env.production
+    #     echo "VITE_APP_REDIRECT_URI=${{ secrets.COGNITO_REDIRECT_URI }}" >> .env.production
+    #     echo "VITE_APP_COGNITO_DOMAIN=${{ secrets.COGNITO_DOMAIN }}" >> .env.production
 
     - name: Build project (if necessary)
       run: |
@@ -39,7 +39,7 @@ jobs:
 
     - name: Sync files to S3
       run: |
-        aws s3 sync ./dist/ s3://brifify.com --delete  # Sync everything in the 'dist' folder to S3 bucket.
+        aws s3 sync ./dist/ s3://abunny.co --delete  # Sync everything in the 'dist' folder to S3 bucket.
 
     - name: Invalidate CloudFront cache
       run: |
