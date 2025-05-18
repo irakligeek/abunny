@@ -5,7 +5,7 @@ import { Button } from "@/components/UI/button";
 import { Input } from "@/components/UI/input";
 import { Card, CardContent } from "@/components/UI/card";
 import { Badge } from "@/components/UI/badge";
-import { CheckIcon, ArrowRightIcon, MailIcon } from "lucide-react";
+import { CheckIcon, ArrowRightIcon, MailIcon, UserIcon, BuildingIcon, Zap } from "lucide-react";
 // Import the bunny image
 import bunnyImage from "@/assets/bunny.png";
 import axios from "axios";
@@ -198,11 +198,11 @@ export default function LandingPage() {
   // Add features data for cards
 
   return (
-    <div className="w-full mx-auto font-inter bg-gradient-to-br from-white to-gray-50 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNlMmUyZTIiLz48L3N2Zz4=')]">
+    <div className="w-full mx-auto bg-gradient-to-br from-white to-gray-50 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNlMmUyZTIiLz48L3N2Zz4=')]">
       {/* Import Toaster for notifications */}
       <Toaster position="top-right" richColors />
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12 max-w-6xl mx-auto">
-        <div className="text-center mb-4 md:mb-12">
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-20 max-w-6xl mx-auto">
+        <div className="text-center mb-4 md:mb-8">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 relative">
             <span className="relative inline-block">
               A/
@@ -210,50 +210,62 @@ export default function LandingPage() {
               <img 
                 src={bunnyImage} 
                 alt="Bunny" 
-                className="absolute -top-12.5 right-26 w-18 h-18 object-contain transform z-100 hidden md:block" 
+                className="absolute -top-14 right-31.5 w-18 h-18 object-contain transform z-100 hidden md:block" 
               />
             </span>
             <span className="ml-2">coming soon</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-10 w-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-6 w-auto">
             Simple, fast, easy A/B testing
             <span className="block mt-2">No coding, no BS, just results.</span>
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-2xl mx-auto mb-8">
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-sm">
-              <CardContent className="pt-0 md:pt-6">
-                <div className="w-8 h-8 rounded-full bg-[#FF3366]/10 flex items-center justify-center mb-3">
-                  <div className="w-3 h-3 rounded-full bg-[#FF3366]"></div>
+              <CardContent className="p-3">
+                <div className="flex items-center">
+                  <div className="self-start mt-1">
+                    <UserIcon className="h-5 w-5 text-[#FF3366] mr-3 flex-shrink-0" />
+                  </div>
+                  <div className="text-left">
+                    <h3 className="font-medium text-base">For solopreneurs</h3>
+                    <p className="text-gray-500 text-sm">
+                      Perfect for individual creators and entrepreneurs
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-medium text-lg mb-1">For solopreneurs</h3>
-                <p className="text-gray-500 text-sm">
-                  Perfect for individual creators and entrepreneurs
-                </p>
               </CardContent>
             </Card>
 
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-sm">
-              <CardContent className="pt-0 md:pt-6">
-                <div className="w-8 h-8 rounded-full bg-[#8A2BE2]/10 flex items-center justify-center mb-3">
-                  <div className="w-3 h-3 rounded-full bg-[#8A2BE2]"></div>
+              <CardContent className="p-3">
+                <div className="flex items-center">
+                  <div className="self-start mt-1">
+                    <BuildingIcon className="h-5 w-5 text-[#8A2BE2] mr-3 flex-shrink-0" />
+                  </div>
+                  <div className="text-left">
+                    <h3 className="font-medium text-base">Small businesses</h3>
+                    <p className="text-gray-500 text-sm">
+                      Tailored for teams with limited resources
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-medium text-lg mb-1">Small businesses</h3>
-                <p className="text-gray-500 text-sm">
-                  Tailored for teams with limited resources and $$
-                </p>
               </CardContent>
             </Card>
 
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-sm">
-              <CardContent className="pt-0 md:pt-6">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#FF3366]/20 to-[#8A2BE2]/20 flex items-center justify-center mb-3">
-                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#FF3366] to-[#8A2BE2]"></div>
+              <CardContent className="p-3">
+                <div className="flex items-center">
+                  <div className="self-start mt-1">
+                    <Zap className="h-5 w-5 mr-3 flex-shrink-0" style={{color: '#FF3366'}} />
+                  </div>
+                  <div className="text-left">
+                    <h3 className="font-medium text-base">Simple to use</h3>
+                    <p className="text-gray-500 text-sm">
+                      Simple setup, immidiate results
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-medium text-lg mb-1">Simple to Use</h3>
-                <p className="text-gray-500 text-sm">
-                  Simple setup, immidiate results
-                </p>
               </CardContent>
             </Card>
           </div>
@@ -261,11 +273,11 @@ export default function LandingPage() {
 
         {/* Email Signup Variation 1 - Floating Card */}
         {!submitted ? (
-          <Card className="w-full max-w-md border-0 shadow-lg overflow-hidden pt-0">
+          <Card className="w-full max-w-md border-0 shadow-lg overflow-hidden pt-0 transform hover:shadow-xl transition-all duration-300">
             <div className="h-4 bg-gradient-to-r from-[#FF3366] to-[#8A2BE2]"></div>
             <CardContent className="pt-1">
-              <p className="text-gray-600 text-center mb-6">
-                Sign up for early access.
+              <p className="text-gray-600 text-center mb-6 font-medium">
+                Sign up for early access
               </p>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="relative">
@@ -282,7 +294,7 @@ export default function LandingPage() {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-[#FF3366] to-[#8A2BE2] hover:opacity-90"
+                  className="w-full bg-gradient-to-r from-[#FF3366] to-[#8A2BE2] hover:opacity-90 font-medium py-6"
                 >
                   {loading ? (
                     <>
@@ -319,8 +331,9 @@ export default function LandingPage() {
             </CardContent>
           </Card>
         ) : (
-          <Card className="w-full max-w-md border-0 shadow-lg text-center py-6">
-            <CardContent className="pt-6">
+          <Card className="w-full max-w-md border-0 shadow-lg text-center py-6 transform transition-all duration-300">
+            <div className="h-4 bg-gradient-to-r from-[#FF3366] to-[#8A2BE2] mb-6"></div>
+            <CardContent>
               <div className="w-16 h-16 bg-gradient-to-r from-[#FF3366] to-[#8A2BE2] rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckIcon className="h-8 w-8 text-white" />
               </div>
