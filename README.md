@@ -1,9 +1,9 @@
-# A/Bunny Landing Page
+# Abify Landing Page
 
-This is the landing page for **A/Bunny**, A/B testing platform app.
+This is the landing page for **Abify**, A/B testing platform app.
 
 📄 **Main App Repository:**  
-👉 [A/Bunny GitHub Repo](https://github.com/irakligeek/abunny)
+👉 [Abify GitHub Repo](https://github.com/irakligeek/abify)
 
 ## Features
 

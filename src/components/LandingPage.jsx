@@ -6,8 +6,6 @@ import { Input } from "@/components/UI/input";
 import { Card, CardContent } from "@/components/UI/card";
 import { Badge } from "@/components/UI/badge";
 import { CheckIcon, ArrowRightIcon, MailIcon, UserIcon, BuildingIcon, Zap } from "lucide-react";
-// Import the bunny image
-import bunnyImage from "@/assets/bunny.png";
 import axios from "axios";
 import { toast } from "sonner";
 import { Toaster } from "@/components/UI/sonner";
@@ -202,19 +200,16 @@ export default function LandingPage() {
       {/* Import Toaster for notifications */}
       <Toaster position="top-right" richColors />
       <div className="min-h-screen flex flex-col items-center justify-center px-4 py-20 max-w-6xl mx-auto">
+        {/* Small logo at the top */}
+        <div className="mb-6">
+          <img 
+            src="/logo.png" 
+            alt="Abify Logo" 
+            className="h-12 w-auto mx-auto opacity-90 hover:opacity-100 transition-opacity duration-200" 
+          />
+        </div>
+        
         <div className="text-center mb-4 md:mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 relative">
-            <span className="relative inline-block">
-              A/
-              <span className="relative z-10">Bunny</span>
-              <img 
-                src={bunnyImage} 
-                alt="Bunny" 
-                className="absolute -top-13 right-31.5 w-18 h-18 object-contain transform z-100 hidden md:block" 
-              />
-            </span>
-            <span className="ml-2">coming soon</span>
-          </h1>
           <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-6 w-auto">
             Simple, fast, easy A/B testing
             <span className="block mt-2">No coding, no BS, just results.</span>
@@ -341,7 +336,7 @@ export default function LandingPage() {
                 Thank you for signing up!
               </h2>
               <p className="text-gray-600">
-                We'll send you an email when A/Bunny is ready for launch. Stay tuned!
+                We'll send you an email when Abify is ready for launch. Stay tuned!
               </p>
             </CardContent>
           </Card>
@@ -355,7 +350,7 @@ export default function LandingPage() {
             </Badge>
             <h2 className="text-2xl font-bold">Join the waitlist</h2>
             <p className="text-gray-600 mt-2">
-              Be among the first to experience A/Bunny
+              Be among the first to experience Abify
             </p>
           </div>
           <form className="flex gap-2">
@@ -391,7 +386,7 @@ export default function LandingPage() {
 
         <div className="mt-12 text-center">
           <p className="text-gray-500 text-sm">
-            © 2025 A/Bunny. All rights reserved.
+            © 2025 Abify. All rights reserved.
           </p>
         </div>
       </div>

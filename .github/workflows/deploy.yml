@@ -1,4 +1,4 @@
-name: Deploy ABunny landing to S3
+name: Deploy Abify landing to S3
 
 on:
   push:
