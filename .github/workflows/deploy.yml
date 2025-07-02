@@ -43,4 +43,18 @@ jobs:
 
     - name: Invalidate CloudFront cache
       run: |
-        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"  # Invalidate all cache using secret.
+        # Add retry logic for CloudFront invalidation to handle throttling
+        for i in {1..5}; do
+          if aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"; then
+            echo "CloudFront invalidation successful"
+            break
+          else
+            echo "Attempt $i failed, waiting 30 seconds before retry..."
+            if [ $i -lt 5 ]; then
+              sleep 30
+            else
+              echo "All retry attempts failed"
+              exit 1
+            fi
+          fi
+        done
